@@ -22,15 +22,18 @@ Therefore, this POC is a CLI app that should:
 - Build and use native "libhadoop.so"
 - Use JLink to create a custom-tailored JRE
 - Use Picocli to parse commad line args
-- Reduce Hadoop bloat: identify useless dependencies, add to the exclusion list
+- Reduce Hadoop bloat: identify useless dependencies and add them to exclusion list
+
 
 ## Prerequisites
 - JDK 21 installed
 - Postgres and localstack:
    ```bash
-   docker compose up -d
+   docker compose up
    ```
-# For multi-arch builds, we need:
+
+
+## For local multi-arch builds, we need:
   -  QEMU installed 
    ```bash
    sudo apt install qemu-system
@@ -46,11 +49,11 @@ Therefore, this POC is a CLI app that should:
    ```
 2. Build the project:
    ```bash
-   ./mvnw clean package
+   ./mvnw clean test package
    ```
 3. Run the application:
    ```bash
-   java -jar target/poc-parquet.jar
+   java -jar target/poc-parquet-0.1.0.jar
    ```
 
 ## Local build (to your native arch)
@@ -65,4 +68,3 @@ Therefore, this POC is a CLI app that should:
 
 ## TODO:
 - Add GitHub Actions build pipelines (multi-platform builds)
-- TestContainers + IntegrationTests

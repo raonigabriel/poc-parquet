@@ -13,15 +13,23 @@ import com.opencsv.CSVWriterBuilder;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import software.amazon.awssdk.awscore.exception.AwsServiceException;
+import software.amazon.awssdk.core.exception.SdkClientException;
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.DeleteBucketRequest;
+import software.amazon.awssdk.services.s3.model.EncryptionTypeMismatchException;
 import software.amazon.awssdk.services.s3.model.GetObjectRequest;
+import software.amazon.awssdk.services.s3.model.InvalidRequestException;
+import software.amazon.awssdk.services.s3.model.InvalidWriteOffsetException;
 import software.amazon.awssdk.services.s3.model.ListObjectsV2Request;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
+import software.amazon.awssdk.services.s3.model.S3Exception;
+import software.amazon.awssdk.services.s3.model.TooManyPartsException;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.Writer;
@@ -203,9 +211,9 @@ public class MovieService {
 
     public void uploadComedyMoviesCsv() {
         try {
-            final var file = extraMoviesCsv.getFile();
+            final var srcData = extraMoviesCsv.getInputStream();
             final var contentType = "text/csv";
-            uploadFile(file, contentType);   
+            uploadFile(extraMoviesCsv.getFilename(), srcData, contentType);   
         } catch (IOException ex) {
             throw new RuntimeException("Error uploading comedy movies CSV file", ex);
         }
@@ -223,15 +231,14 @@ public class MovieService {
         }
     }
 
-    private void uploadFile(File file, String contentType) {
-        final var key = file.getName();
+    private void uploadFile(String fileName, InputStream srcData, String contentType) throws IOException {
         final var putRequest = PutObjectRequest.builder()
             .bucket(BUCKET_NAME)
-            .key(key)
+            .key(fileName)
             .contentType(contentType)
             .build();
-        s3Client.putObject(putRequest, RequestBody.fromFile(file));
-        log.info("Uploaded file {} to bucket {}", key, BUCKET_NAME);
+        s3Client.putObject(putRequest, RequestBody.fromBytes(srcData.readAllBytes()));
+        log.info("Uploaded file {} to bucket {}", fileName, BUCKET_NAME);
     }
 
     private MovieEntity mapToMovieEntity(String[] data) {
