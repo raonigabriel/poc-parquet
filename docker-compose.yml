@@ -24,4 +24,11 @@ services:
       - DOCKER_HOST=unix:///var/run/docker.sock
       - DEBUG=0
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"      
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
+  poc-parquet:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: poc-parquet
+    restart: unless-stopped

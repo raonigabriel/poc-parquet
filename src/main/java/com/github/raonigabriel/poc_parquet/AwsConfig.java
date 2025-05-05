@@ -39,7 +39,7 @@ public class AwsConfig {
 		try {
 			return S3Client.builder()
 				.credentialsProvider(StaticCredentialsProvider.create(credentials))
-				.endpointOverride(new URI("http://localhost:4566")) 
+				.endpointOverride(new URI("http://localstack:4566")) 
 				.region(Region.US_EAST_1)
 				.forcePathStyle(true)
 			    .httpClientBuilder(ApacheHttpClient.builder())
