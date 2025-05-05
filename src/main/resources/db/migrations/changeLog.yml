@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/migrations/1-create-movies-table.yml
+  - include:
+      file: db/migrations/2-insert-movies.yml

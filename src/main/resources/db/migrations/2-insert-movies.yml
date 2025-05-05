@@ -1,0 +1,581 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: raonigabriel
+      changes:
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Shawshank Redemption'
+              - column:
+                  name: rating
+                  value: 9.3
+              - column:
+                  name: release_date
+                  value: '1994-09-23'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Godfather'
+              - column:
+                  name: rating
+                  value: 9.2
+              - column:
+                  name: release_date
+                  value: '1972-03-24'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Dark Knight'
+              - column:
+                  name: rating
+                  value: 9.0
+              - column:
+                  name: release_date
+                  value: '2008-07-18'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: '12 Angry Men'
+              - column:
+                  name: rating
+                  value: 9.0
+              - column:
+                  name: release_date
+                  value: '1957-04-10'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Schindler''s List'
+              - column:
+                  name: rating
+                  value: 9.0
+              - column:
+                  name: release_date
+                  value: '1993-12-15'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Pulp Fiction'
+              - column:
+                  name: rating
+                  value: 8.9
+              - column:
+                  name: release_date
+                  value: '1994-10-14'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Lord of the Rings: The Return of the King'
+              - column:
+                  name: rating
+                  value: 8.9
+              - column:
+                  name: release_date
+                  value: '2003-12-17'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Good, the Bad and the Ugly'
+              - column:
+                  name: rating
+                  value: 8.9
+              - column:
+                  name: release_date
+                  value: '1966-12-23'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Fight Club'
+              - column:
+                  name: rating
+                  value: 8.8
+              - column:
+                  name: release_date
+                  value: '1999-10-15'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Lord of the Rings: The Fellowship of the Ring'
+              - column:
+                  name: rating
+                  value: 8.8
+              - column:
+                  name: release_date
+                  value: '2001-12-19'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Forrest Gump'
+              - column:
+                  name: rating
+                  value: 8.8
+              - column:
+                  name: release_date
+                  value: '1994-07-06'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Star Wars: Episode V - The Empire Strikes Back'
+              - column:
+                  name: rating
+                  value: 8.8
+              - column:
+                  name: release_date
+                  value: '1980-05-21'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Inception'
+              - column:
+                  name: rating
+                  value: 8.8
+              - column:
+                  name: release_date
+                  value: '2010-07-16'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Lord of the Rings: The Two Towers'
+              - column:
+                  name: rating
+                  value: 8.7
+              - column:
+                  name: release_date
+                  value: '2002-12-18'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'One Flew Over the Cuckoo''s Nest'
+              - column:
+                  name: rating
+                  value: 8.7
+              - column:
+                  name: release_date
+                  value: '1975-11-19'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'GoodFellas'
+              - column:
+                  name: rating
+                  value: 8.7
+              - column:
+                  name: release_date
+                  value: '1990-09-19'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Matrix'
+              - column:
+                  name: rating
+                  value: 8.6
+              - column:
+                  name: release_date
+                  value: '1999-03-31'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Seven Samurai'
+              - column:
+                  name: rating
+                  value: 8.6
+              - column:
+                  name: release_date
+                  value: '1954-04-26'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Parasite'
+              - column:
+                  name: rating
+                  value: 8.6
+              - column:
+                  name: release_date
+                  value: '2019-05-30'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Interstellar'
+              - column:
+                  name: rating
+                  value: 8.6
+              - column:
+                  name: release_date
+                  value: '2014-11-07'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Léon: The Professional'
+              - column:
+                  name: rating
+                  value: 8.5
+              - column:
+                  name: release_date
+                  value: '1994-09-14'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Usual Suspects'
+              - column:
+                  name: rating
+                  value: 8.5
+              - column:
+                  name: release_date
+                  value: '1995-08-16'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Lion King'
+              - column:
+                  name: rating
+                  value: 8.5
+              - column:
+                  name: release_date
+                  value: '1994-06-24'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Pianist'
+              - column:
+                  name: rating
+                  value: 8.5
+              - column:
+                  name: release_date
+                  value: '2002-09-27'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Terminator 2: Judgment Day'
+              - column:
+                  name: rating
+                  value: 8.5
+              - column:
+                  name: release_date
+                  value: '1991-07-03'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'American History X'
+              - column:
+                  name: rating
+                  value: 8.5
+              - column:
+                  name: release_date
+                  value: '1998-10-30'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Gladiator'
+              - column:
+                  name: rating
+                  value: 8.5
+              - column:
+                  name: release_date
+                  value: '2000-05-05'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Spirited Away'
+              - column:
+                  name: rating
+                  value: 8.6
+              - column:
+                  name: release_date
+                  value: '2001-07-20'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Saving Private Ryan'
+              - column:
+                  name: rating
+                  value: 8.6
+              - column:
+                  name: release_date
+                  value: '1998-07-24'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Green Mile'
+              - column:
+                  name: rating
+                  value: 8.6
+              - column:
+                  name: release_date
+                  value: '1999-12-10'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Life Is Beautiful'
+              - column:
+                  name: rating
+                  value: 8.6
+              - column:
+                  name: release_date
+                  value: '1997-12-20'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Se7en'
+              - column:
+                  name: rating
+                  value: 8.6
+              - column:
+                  name: release_date
+                  value: '1995-09-22'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Silence of the Lambs'
+              - column:
+                  name: rating
+                  value: 8.6
+              - column:
+                  name: release_date
+                  value: '1991-02-14'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'It''s a Wonderful Life'
+              - column:
+                  name: rating
+                  value: 8.6
+              - column:
+                  name: release_date
+                  value: '1946-12-20'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Star Wars: Episode IV - A New Hope'
+              - column:
+                  name: rating
+                  value: 8.6
+              - column:
+                  name: release_date
+                  value: '1977-05-25'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Whiplash'
+              - column:
+                  name: rating
+                  value: 8.5
+              - column:
+                  name: release_date
+                  value: '2014-10-10'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Intouchables'
+              - column:
+                  name: rating
+                  value: 8.5
+              - column:
+                  name: release_date
+                  value: '2011-11-02'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Prestige'
+              - column:
+                  name: rating
+                  value: 8.5
+              - column:
+                  name: release_date
+                  value: '2006-10-20'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'The Departed'
+              - column:
+                  name: rating
+                  value: 8.5
+              - column:
+                  name: release_date
+                  value: '2006-10-06'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Back to the Future'
+              - column:
+                  name: rating
+                  value: 8.5
+              - column:
+                  name: release_date
+                  value: '1985-07-03'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Alien'
+              - column:
+                  name: rating
+                  value: 8.4
+              - column:
+                  name: release_date
+                  value: '1979-05-25'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Apocalypse Now'
+              - column:
+                  name: rating
+                  value: 8.4
+              - column:
+                  name: release_date
+                  value: '1979-08-15'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Memento'
+              - column:
+                  name: rating
+                  value: 8.4
+              - column:
+                  name: release_date
+                  value: '2001-03-16'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Psycho'
+              - column:
+                  name: rating
+                  value: 8.5
+              - column:
+                  name: release_date
+                  value: '1960-09-08'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Rear Window'
+              - column:
+                  name: rating
+                  value: 8.5
+              - column:
+                  name: release_date
+                  value: '1954-09-01'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'City of God'
+              - column:
+                  name: rating
+                  value: 8.6
+              - column:
+                  name: release_date
+                  value: '2002-08-30'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'Django Unchained'
+              - column:
+                  name: rating
+                  value: 8.4
+              - column:
+                  name: release_date
+                  value: '2012-12-25'
+        - insert:
+            tableName: movies
+            columns:
+              - column:
+                  name: name
+                  value: 'WALL·E'
+              - column:
+                  name: rating
+                  value: 8.4
+              - column:
+                  name: release_date
+                  value: '2008-06-27'

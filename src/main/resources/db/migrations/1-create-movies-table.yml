@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: raonigabriel
+      changes:
+        - createTable:
+            tableName: movies
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: rating
+                  type: FLOAT8
+                  constraints:
+                    nullable: false
+              - column:
+                  name: release_date
+                  type: DATE
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 2
+      author: raonigabriel
+      changes:
+        - addUniqueConstraint:
+            tableName: movies
+            columnNames: name
+            constraintName: uk_movie_name
