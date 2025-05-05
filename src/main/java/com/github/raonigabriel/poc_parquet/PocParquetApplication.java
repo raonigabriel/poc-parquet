@@ -28,7 +28,7 @@ public class PocParquetApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// Setup and cleanup. We will end up with a database with 48 records and a bucket with a CSV file (50 records)
 		service.ensureCleanBucket();
-		service.uploadComedyMoviesCsv();
+		service.uploadMoviesCsv();
 		service.ensureDefaultDatabase();
 
 		// READ from PG, save to parquet
@@ -37,7 +37,7 @@ public class PocParquetApplication implements CommandLineRunner {
 		log.info("Exported {} movies from PG to Parquet file", count);
 		
 		// READ from remote CSV, save to parquet
-		final var csvReader = service.downloadComedyMoviesCsv();
+		final var csvReader = service.downloadMoviesCsv();
 		movies = service.readMoviesFromCsv(csvReader);
 		count = service.writeMoviesToParquet(TMP_PARQUET_FILE, movies);
 		log.info("Exported {} movies from CSV to Parquet file", count);

@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 
 import lombok.extern.slf4j.Slf4j;
 import software.amazon.awssdk.auth.credentials.AwsCredentials;
@@ -54,10 +52,4 @@ public class AwsConfig {
 			throw new BeanInitializationException("Failed to create S3 client", ex);
 		}
 	}
-
-	@Bean
-	Resource extraMoviesCsv() {
-    	return new ClassPathResource("extra_movies.csv");
-	}
-
 }

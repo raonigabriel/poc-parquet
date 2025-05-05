@@ -26,7 +26,7 @@ class MovieServiceTests {
 	@BeforeEach
 	void setUp(){
 		service.ensureCleanBucket();
-		service.uploadComedyMoviesCsv();
+		service.uploadMoviesCsv();
 		service.ensureDefaultDatabase();		
 	}
 
@@ -40,7 +40,7 @@ class MovieServiceTests {
 
 	@Test
 	void readCsvWriteParquet() {
-		final var csvReader = service.downloadComedyMoviesCsv();
+		final var csvReader = service.downloadMoviesCsv();
 		final var movies = service.readMoviesFromCsv(csvReader);
 		assertThat(movies).hasSize(50);
 		final var exportedCount = service.writeMoviesToParquet(TMP_PARQUET_FILE, movies);

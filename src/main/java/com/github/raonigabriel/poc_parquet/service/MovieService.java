@@ -1,9 +1,11 @@
 package com.github.raonigabriel.poc_parquet.service;
 
+import org.springframework.beans.factory.BeanInitializationException;
 import org.springframework.core.io.Resource;
 import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.ResourceUtils;
 import org.springframework.util.StringUtils;
 
 import com.github.raonigabriel.poc_parquet.model.MovieEntity;
@@ -67,7 +69,7 @@ public class MovieService {
 
     private final MovieRepository movieRepository;
 
-    private final Resource extraMoviesCsv;
+    private final String EXTRA_MOVIES_CSV = "extra_movies.csv";
 
     private final S3Client s3Client;
 
@@ -209,21 +211,23 @@ public class MovieService {
         log.info("Created a new bucket {}", BUCKET_NAME);
     }
 
-    public void uploadComedyMoviesCsv() {
-        try {
-            final var srcData = extraMoviesCsv.getInputStream();
-            final var contentType = "text/csv";
-            uploadFile(extraMoviesCsv.getFilename(), srcData, contentType);   
+    public void uploadMoviesCsv() {
+        final var classLoader = Thread.currentThread().getContextClassLoader();
+        try (InputStream inputStream = classLoader.getResourceAsStream(EXTRA_MOVIES_CSV)) {
+            if (inputStream == null) {
+                throw new BeanInitializationException(BUCKET_NAME);
+            }
+            uploadFile(EXTRA_MOVIES_CSV, inputStream, "text/csv");
         } catch (IOException ex) {
             throw new RuntimeException("Error uploading comedy movies CSV file", ex);
         }
     }
 
-    public Reader downloadComedyMoviesCsv() {
+    public Reader downloadMoviesCsv() {
         try {
         final var getRequest = GetObjectRequest.builder()
             .bucket(BUCKET_NAME)
-            .key(extraMoviesCsv.getFilename())
+            .key(EXTRA_MOVIES_CSV)
             .build();
             return new InputStreamReader(s3Client.getObject(getRequest));
         } catch (Exception ex) {
