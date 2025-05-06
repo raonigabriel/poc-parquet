@@ -69,7 +69,7 @@ public class MovieService {
 
     private final MovieRepository movieRepository;
 
-    private final String EXTRA_MOVIES_CSV = "extra_movies.csv";
+    private static final String EXTRA_MOVIES_CSV = "extra_movies.csv";
 
     private final S3Client s3Client;
 

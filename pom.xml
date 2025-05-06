@@ -13,8 +13,35 @@
 	<groupId>com.github.raonigabriel</groupId>
 	<artifactId>poc-parquet</artifactId>
 	<version>0.1.0</version>
+
 	<name>poc-parquet</name>
 	<description>Demo project for testing parquet, S3 and Postgres using arm64</description>
+	<url>https://github.com/raonigabriel/poc-parquet/README.md</url>
+
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/raonigabriel/poc-parquet</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>raonigabriel</id>
+			<name>Raoni Gabriel</name>
+			<timezone>-3</timezone>
+			<url>https://github.com/raonigabriel</url>
+			<roles>
+				<role>Java/Cloud Software Architect</role>
+				<role>DevOps Engineer</role>
+			</roles>
+		</developer>
+	</developers>
 
 	<properties>
 		<java.version>21</java.version>
