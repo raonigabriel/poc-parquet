@@ -66,5 +66,7 @@ Therefore, this POC is a CLI app that should:
    docker buildx build --platform linux/amd64,linux/arm64 .
    ```
 
-## TODO:
-- Add GitHub Actions build pipelines (multi-platform builds)
+
+## License
+
+Code is released under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html)
