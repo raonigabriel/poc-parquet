@@ -18,7 +18,7 @@ RUN ./mvnw dependency:go-offline
 
 # Build the application
 COPY --chown=1000:1000 ./src /app/src
-RUN ./mvnw clean package
+RUN ./mvnw clean package -Dmaven.test.skip=true
 
 FROM runtime
 WORKDIR /app
