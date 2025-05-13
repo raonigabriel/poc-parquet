@@ -19,7 +19,7 @@ public class PgTestConfig {
     
     @Container
     @SuppressWarnings({"rawTypes", "resource"})
-    private static final PostgreSQLContainer<?> PG_CONTAINER = new PostgreSQLContainer<>("postgres:16-alpine")
+    public static final PostgreSQLContainer<?> PG_CONTAINER = new PostgreSQLContainer<>("postgres:16-alpine")
             .withDatabaseName("postgres")
             .withUsername("postgres")
             .withPassword("postgres");

@@ -29,7 +29,6 @@ public class AwsTestConfig {
     private static final LocalStackContainer LOCALSTACK = new LocalStackContainer(
         DockerImageName.parse("localstack/localstack:s3-latest")).withServices(S3);
 
-
 	@Bean
     @Primary
 	S3Client s3Client() {
@@ -59,5 +58,10 @@ public class AwsTestConfig {
 		} catch (URISyntaxException ex) {
 			throw new BeanInitializationException("Failed to create S3 client", ex);
 		}
+	}
+
+	@Bean
+	public String s3EndpointOverride() {
+		return LOCALSTACK.getEndpointOverride(S3).toString();
 	}
 }

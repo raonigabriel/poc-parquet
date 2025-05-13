@@ -12,6 +12,7 @@ Therefore, this POC is a CLI app that should:
 - Read/Write CSV files
 - Read/Write Parquet files
 - Read/Write from Postgres
+- Read/Write from Icerberg with JDBC catalog and S3 storage
 - Load and use all required libraries successfully
 - Package the app as an "uber-jar"
 - Multi-platform builds using Docker "buildx" + QEMU both locally and with GitHub Actions
